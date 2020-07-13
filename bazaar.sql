@@ -100,14 +100,12 @@ CREATE TABLE `Operation` (
 
 -- Structure de la table `Commande`
 
-
 CREATE TABLE `Commande` (
   `commandeID` int(100) NOT NULL,
   `reglee` boolean() NOT NULL,
   `userID` int(100) NOT NULL,
-  `adresseID` int(50) NOT NULL
+  `adresseID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 -- --------------------------------------------------------
 
 
