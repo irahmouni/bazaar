@@ -2,7 +2,7 @@
   /**
    * DBFactory.php : fabrique pour la connexion PDO vers la base SQL 
    *
-   * @author Gérome Canals
+   * @author Karim RAHMOUNI
    */
 
 namespace conf;
