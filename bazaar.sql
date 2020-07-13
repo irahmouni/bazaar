@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Hôte : localhost
--- Généré le : Lundi 13 juil. 2020 à 15:13
--- Version du serveur :  5.7.30-0ubuntu0.18.04.1
--- Version de PHP : 7.2.24-0ubuntu0.18.04.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -13,29 +5,27 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
---
--- Base de données : `appKarim`
---
+
 
 -- --------------------------------------------------------
 
---
+
 -- Structure de la table `IllustrationArticlesse`
---
+
 
 CREATE TABLE `IllustrationArticle` (
   `ImageID` int(100) NOT NULL,
-  `title` varchar(50) NOT NULL
-  `alt` varchar(50) NOT NULL
-  `url` varchar(50) NOT NULL
+  `title` varchar(50) NOT NULL,
+  `alt` varchar(50) NOT NULL,
+  `url` varchar(50) NOT NULL,
   `articleID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
---
+
 -- Structure de la table `Article`
---
+
 
 CREATE TABLE `Article` (
   `ArticleID` int(100) NOT NULL,
@@ -47,9 +37,9 @@ CREATE TABLE `Article` (
 
 -- --------------------------------------------------------
 
---
+
 -- Structure de la table `Prix`
---
+
 
 CREATE TABLE `Prix` (
   `articleID` int(100) NOT NULL,
@@ -60,9 +50,9 @@ CREATE TABLE `Prix` (
 
 -- --------------------------------------------------------
 
---
+
 -- Structure de la table `Adresse`
---
+
 
 CREATE TABLE `Adresse` (
   `numero` varchar(50) NOT NULL,
@@ -73,20 +63,20 @@ CREATE TABLE `Adresse` (
   `comp1` varchar(50) NOT NULL,
   `comp2` varchar(50) NOT NULL,
   `adresseID` int(100) NOT NULL,
-  `useID` int(100) NOT NULL,
+  `useID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
---
+
 -- Structure de la table `Utilisateur`
---
+
 
 CREATE TABLE `Utilisateur` (
   `id` int(100) NOT NULL,
   `passwordHash` varchar(50) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL
+  `prenom` varchar(50) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `administrateur` boolean() NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,21 +85,21 @@ CREATE TABLE `Utilisateur` (
 
 
 
---
+
 -- Structure de la table `Operation`
---
+
 
 CREATE TABLE `Operation` (
   `opperationID` int(100) NOT NULL,
-  `quantite` varchar(50) NOT NULL
+  `quantite` varchar(50) NOT NULL,
   `date` date() NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
---
+
 -- Structure de la table `Commande`
---
+
 
 CREATE TABLE `Commande` (
   `commandeID` int(100) NOT NULL,
@@ -120,59 +110,57 @@ CREATE TABLE `Commande` (
 
 -- --------------------------------------------------------
 
---
+
 -- Index pour les tables déchargées
---
 
---
+
 -- Index pour la table `IllustrationArticle`
---
-ALTER TABLE `IllustrationArticle`
-  ADD PRIMARY KEY (`ImageID`);
-  ADD KEY `IllustrationArticleArticleID` (`articleID`);
---
--- Index pour la table `ingredient`
---
-ALTER TABLE `Article`
-  ADD PRIMARY KEY (`ArticleID`),
 
---
+ALTER TABLE `IllustrationArticle`
+  ADD PRIMARY KEY (`ImageID`),
+  ADD KEY `IllustrationArticleArticleID` (`articleID`);
+
+-- Index pour la table `Article`
+
+ALTER TABLE `Article`
+  ADD PRIMARY KEY (`ArticleID`);
+
+
 -- Index pour la table ` Prix`
---
-ALTER TABLE ` Prix`
-  ADD PRIMARY KEY (`valeur`),
-  ADD KEY `PrixArticleID` (`articleID`),
---
+
+ALTER TABLE `Prix`
+  ADD PRIMARY KEY (`articleID`);
+
 -- Index pour la table `Adresse`
---
+
 ALTER TABLE `Adresse`
   ADD PRIMARY KEY (`numero`),
   ADD KEY `AdresseUseID` (`useID`),
   ADD KEY `AdresseAdresseID` (`adresseID`);
 
---
+
 -- Index pour la table `Utilisateur`
---
+
 ALTER TABLE `Utilisateur`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`);
 
 
---
+
 -- Index pour la table `Operation`
---
+
 ALTER TABLE `unite`
   ADD PRIMARY KEY (`operationID`);
 
---
+
 -- Index pour la table `Commande`
---
+
 ALTER TABLE `Commande`
   ADD PRIMARY KEY (`commandeID`),
   ADD KEY `CommandeUserID` (`userID`),
   ADD KEY `CommandeAdresseID` (`adresseID`);
 
---
+
 -- AUTO_INCREMENT pour les tables déchargées
---
+
 
 COMMIT;
