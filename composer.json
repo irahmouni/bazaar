@@ -1,4 +1,7 @@
 {
+	"name": "lbs",
+    "type" : "project",
+
 	"autoload": {
 		"psr-4": {
 			"lbs\\": "src/lbs"
