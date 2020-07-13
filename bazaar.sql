@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : Dim 05 juil. 2020 à 22:51
+-- Généré le : Lundi 13 juil. 2020 à 15:13
 -- Version du serveur :  5.7.30-0ubuntu0.18.04.1
 -- Version de PHP : 7.2.24-0ubuntu0.18.04.6
 
@@ -12,11 +12,6 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données : `appKarim`
@@ -33,7 +28,7 @@ CREATE TABLE `IllustrationArticle` (
   `title` varchar(50) NOT NULL
   `alt` varchar(50) NOT NULL
   `url` varchar(50) NOT NULL
-  `articleID` int(50) NOT NULL
+  `articleID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -44,106 +39,137 @@ CREATE TABLE `IllustrationArticle` (
 
 CREATE TABLE `Article` (
   `ArticleID` int(100) NOT NULL,
-  `nom` int(100) NOT NULL,
-  `descriptionCourte` int(50) NOT NULL,
-  `descriptionLongue` varchar(100) NOT NULL
-  ` prix HT` int(50) NOT NULL
+  `nom` varchar(50) NOT NULL,
+  `descriptionCourte` varchar(50) NOT NULL,
+  `descriptionLongue` varchar(50) NOT NULL,
+  ` prix HT` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `IngredientFamilleRecette`
+-- Structure de la table `Prix`
 --
 
-CREATE TABLE `IngredientFamilleRecette` (
-  `idIngredientFamilleRecette` int(100) NOT NULL,
-  `idFamilleRecette` int(100) NOT NULL,
-  `idIngredient` int(100) NOT NULL
+CREATE TABLE `Prix` (
+  `articleID` int(100) NOT NULL,
+  `dateDebut` Date() NOT NULL,
+  `dateFin` Date() NOT NULL,
+  `valeur` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ingredientRecette`
+-- Structure de la table `Adresse`
 --
 
-CREATE TABLE `ingredientRecette` (
-  `idIngredientRecette` int(100) NOT NULL,
-  `idIngredient` int(100) NOT NULL,
-  `idRecette` int(100) NOT NULL,
-  `qte` int(50) NOT NULL
+CREATE TABLE `Adresse` (
+  `numero` varchar(50) NOT NULL,
+  `rue` varchar(50) NOT NULL,
+  `codePostal` varchar(50) NOT NULL,
+  `Subdivision` varchar(50) NOT NULL,
+  `pays` varchar(50) NOT NULL,
+  `comp1` varchar(50) NOT NULL,
+  `comp2` varchar(50) NOT NULL,
+  `adresseID` int(100) NOT NULL,
+  `useID` int(100) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `recette`
+-- Structure de la table `Utilisateur`
 --
 
-CREATE TABLE `recette` (
-  `idRecette` int(100) NOT NULL,
-  `prixUniteProd` int(50) NOT NULL,
-  `idUnite` int(100) NOT NULL,
-  `libelle` varchar(50) NOT NULL
+CREATE TABLE `Utilisateur` (
+  `id` int(100) NOT NULL,
+  `passwordHash` varchar(50) NOT NULL,
+  `pseudo` varchar(50) NOT NULL,
+  `prenom` varchar(50) NOT NULL
+  `nom` varchar(50) NOT NULL,
+  `administrateur` boolean() NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+
+
+--
+-- Structure de la table `Operation`
+--
+
+CREATE TABLE `Operation` (
+  `opperationID` int(100) NOT NULL,
+  `quantite` varchar(50) NOT NULL
+  `date` date() NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `unite`
+-- Structure de la table `Commande`
 --
 
-CREATE TABLE `unite` (
-  `idUnite` int(100) NOT NULL,
-  `libelle` varchar(50) NOT NULL
+CREATE TABLE `Commande` (
+  `commandeID` int(100) NOT NULL,
+  `reglee` boolean() NOT NULL,
+  `userID` int(100) NOT NULL,
+  `adresseID` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `familleRecette`
+-- Index pour la table `IllustrationArticle`
 --
-ALTER TABLE `familleRecette`
-  ADD PRIMARY KEY (`idFamilleRecette`);
-
+ALTER TABLE `IllustrationArticle`
+  ADD PRIMARY KEY (`ImageID`);
+  ADD KEY `IllustrationArticleArticleID` (`articleID`);
 --
 -- Index pour la table `ingredient`
 --
-ALTER TABLE `ingredient`
-  ADD PRIMARY KEY (`idIngredient`),
-  ADD KEY `idUniteIngredient` (`idUnite`);
+ALTER TABLE `Article`
+  ADD PRIMARY KEY (`ArticleID`),
 
 --
--- Index pour la table `IngredientFamilleRecette`
+-- Index pour la table ` Prix`
 --
-ALTER TABLE `IngredientFamilleRecette`
-  ADD PRIMARY KEY (`idIngredientFamilleRecette`),
-  ADD KEY `ingredientFamilleRecetteFamilleRecette` (`idFamilleRecette`),
-  ADD KEY `ingredientFamilleRecetteIngredient` (`idIngredient`);
+ALTER TABLE ` Prix`
+  ADD PRIMARY KEY (`valeur`),
+  ADD KEY `PrixArticleID` (`articleID`),
+--
+-- Index pour la table `Adresse`
+--
+ALTER TABLE `Adresse`
+  ADD PRIMARY KEY (`numero`),
+  ADD KEY `AdresseUseID` (`useID`),
+  ADD KEY `AdresseAdresseID` (`adresseID`);
 
 --
--- Index pour la table `ingredientRecette`
+-- Index pour la table `Utilisateur`
 --
-ALTER TABLE `ingredientRecette`
-  ADD PRIMARY KEY (`idIngredientRecette`),
-  ADD KEY `IngredientRecetteIdIgredient` (`idIngredient`),
-  ADD KEY `IngredientRecetteIdRecette` (`idRecette`);
+ALTER TABLE `Utilisateur`
+  ADD PRIMARY KEY (`id`),
+
 
 --
--- Index pour la table `recette`
---
-ALTER TABLE `recette`
-  ADD PRIMARY KEY (`idRecette`),
-  ADD KEY `recetteIdUnite` (`idUnite`);
-
---
--- Index pour la table `unite`
+-- Index pour la table `Operation`
 --
 ALTER TABLE `unite`
-  ADD PRIMARY KEY (`idUnite`);
+  ADD PRIMARY KEY (`operationID`);
+
+--
+-- Index pour la table `Commande`
+--
+ALTER TABLE `Commande`
+  ADD PRIMARY KEY (`commandeID`),
+  ADD KEY `CommandeUserID` (`userID`),
+  ADD KEY `CommandeAdresseID` (`adresseID`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
