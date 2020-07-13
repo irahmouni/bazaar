@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"psr-4": {
+			"lbs\\": "src/lbs"
+		}
+	},
+	"require": {
+		"slim/slim": "^4.3"
+	}
+}
