@@ -90,9 +90,9 @@ CREATE TABLE `Utilisateur` (
 
 
 CREATE TABLE `Operation` (
-  `opperationID` int(100) NOT NULL,
+  `operationID` int(100) NOT NULL,
   `quantite` varchar(50) NOT NULL,
-  `date` date() NOT NULL
+  `date` date
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -146,7 +146,7 @@ ALTER TABLE `Utilisateur`
 
 -- Index pour la table `Operation`
 
-ALTER TABLE `unite`
+ALTER TABLE `Operation`
   ADD PRIMARY KEY (`operationID`);
 
 
