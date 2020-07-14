@@ -102,7 +102,7 @@ CREATE TABLE `Operation` (
 
 CREATE TABLE `Commande` (
   `commandeID` int(100) NOT NULL,
-  `reglee` boolean() NOT NULL,
+  `reglee` boolean default false,
   `userID` int(100) NOT NULL,
   `adresseID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
