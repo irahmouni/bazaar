@@ -43,8 +43,8 @@ CREATE TABLE `Article` (
 
 CREATE TABLE `Prix` (
   `articleID` int(100) NOT NULL,
-  `dateDebut` Date() NOT NULL,
-  `dateFin` Date() NOT NULL,
+  `dateDebut` Date,
+  `dateFin` Date,
   `valeur` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -78,7 +78,7 @@ CREATE TABLE `Utilisateur` (
   `pseudo` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `administrateur` boolean() NOT NULL
+  `administrateur` boolean DEFAULT false
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
