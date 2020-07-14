@@ -1,6 +1,6 @@
 <?php
 require_once "connection.class.php";
-define('USER_FILE', 'users.json');
+define('USER_FILE', 'users.txt');
 
 class User {
 

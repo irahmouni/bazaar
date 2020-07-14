@@ -26,7 +26,7 @@ try {
     print $row[ 'adresseID' ];
     print $row[ 'numero' ];
     print $row[ 'rue' ];
-    print $row[ 'codePostale' ];
+    print $row[ 'codePostal' ];
     print $row[ 'pays' ];
     //print $row[ 'url' ];
     }
