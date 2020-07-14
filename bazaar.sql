@@ -132,13 +132,26 @@ insert into IllustrationArticle (ImageID, title, alt, articleID) values
 
 
 -- insertion la table Article
+-- #1064 - Erreur de syntaxe près de 'HT, nom, descriptionCourte) values
+-- (1,'min-max', 199.99, 'adidas predator', 'Av' à la ligne 1
+
 
 insert into Article (ArticleID, quantite, prix HT, nom, descriptionCourte)
 values
 (1,'min,max', 199.99, 'adidas predator', 'Avec la nouvelle adidas Predator. La tige en textile tricoté de cette chaussure de foot sans lacets s enroule autour de ton pied pour un vrai ajustement à 360 degrés.'),
 (2, 'min,max', 139.99, 'adidas pure', 'Basket adidas Originals Pure. La basket adidas Originals Pure Boost réactualise le look d un modèle de course emblématique des années 80.'),
-(3, 'min,max', 49.99, 'adidas purechaos', 'adidas Homme Baskets. Superstar Boost de qualité original adidas'),
-(4, 'min,max', 79.99, 'nike hyperv', 'nike_hyperv remplace une partie de la semelle intermédiaire par de l air visible. Elle revient aujourd hui dans sa version originale. '),
+(3, 'min,max', 49.99, 'adidas purechaos', 'Adidas Homme purechaos. Superstar Boost de qualité original adidas'),
+(4, 'min,max', 79.99, 'nike hyperv', 'Nike_hyperv remplace une partie de la semelle intermédiaire par de l air visible. Elle revient aujourd hui dans sa version originale. '),
 (5, 'min,max', 249.99,'nike mercu',  'Le modèle Revolution 5 est un produit phare de la marque Nike.'),
-(6, 'min,max', 129.99, 'Nike JR', 'offre confort et design légendaire. Détails en cuir de haute qualité.')
+(6, 'min,max', 129.99, 'Nike JR', 'Offre confort et design légendaire. Détails en cuir de haute qualité.')
+
+
+
+
+
+
+
+
+
+
 COMMIT;
