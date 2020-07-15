@@ -15,7 +15,7 @@
         $error = "Cette connexion n'existe pas";
       }
     }else{
-      $error = "Le mot de passe et la connexion ne peuvent pas être vides";
+      $error = "Le mot de passe et la connexion ne peuvent pas être vide";
     }
   }else{
     $error = "Impossible d'enregistrer cet utilisateur, le champ ne peut pas être vide";  
@@ -29,4 +29,5 @@
   
   header("location:index.php");
   die;
+  ?>
   
