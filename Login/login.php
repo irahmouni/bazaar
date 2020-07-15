@@ -1,5 +1,5 @@
 <?php
-  require_once "./gestionBaseDonnee.class.php";
+  require_once "./gestionBaseDonnee.php";
   session_start();
   
   $error = false; 

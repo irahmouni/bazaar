@@ -1,9 +1,6 @@
 <?php
-  require_once "./user.class.php";
-  /* on met require_once  persque une classe animal lephon singe, si le fichier n'existe pas il arrête
-  * incloud  il rentre cette variable et continue
-  *
-  */
+  require_once "./gestionBaseDonnee.php";
+  
   session_start();
   
   $error = false; 
@@ -24,13 +21,13 @@
         $_SESSION["success_message"] = "Account created";
         /*
         
-        $poste out get emporte les donnée à l'interieur de cadre
-        $ sassion c'est un tableau 
-         $name = null,
-    $surname = null,
-    $login = null,
-    $password = null
-    */
+          $poste out get emporte les donnée à l'interieur de cadre
+          $ sassion c'est un tableau 
+          $name = null,
+          $surname = null,
+          $login = null,
+          $password = null
+        */
       }else{
         $error = "User already exist"; 
       }
@@ -48,3 +45,4 @@
   // header rediriger l'etulisateur et executé
   die;
   // die arrete le traitement alors il n'exécute pas après
+  ?>
