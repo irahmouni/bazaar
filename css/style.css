@@ -1,0 +1,86 @@
+.bandeau{
+    background-color: darkgreen;
+    height: 100px;
+    position: fixed;
+    top:0px;
+
+}
+.bandeau h1{
+    font-size: 50px;
+
+    color: white;
+    text-align: left;
+}
+#panier{
+
+    width: 30px;
+    border-radius: 100px;
+    margin-top: 50px;
+    display: block;
+
+
+}
+
+article img{
+    display: block;
+    margin : auto;
+    height: 200px;
+}
+
+
+article button,p{
+    display: inline-block;
+    margin : auto;
+    margin-top: 10px;
+}
+
+.container-fluid{
+    z-index: 1;
+}
+.container{
+    z-index: 2;
+    margin-top: 100px;
+
+}
+#article{
+    font-size: 13px;
+    color: white;
+    margin-top: 50px;
+    display: inline-block;
+    text-align: right;
+    margin-left: 70%;
+
+}
+
+h5,h1{
+    display: block;
+    margin : auto;
+    text-align: center;
+}
+
+.corbeille{
+    display: inline-block;
+    height: 20px;
+}
+.corbeille:hover{
+    height: 25px;
+
+
+}
+
+h1{
+    margin-top: 20px;
+    color: red;
+}
+
+
+p{
+ display: inline-block;
+    font-size: 15px;
+    font-weight:bold ;
+}
+
+#tot{
+    display: inline-block;
+
+}
