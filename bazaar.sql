@@ -25,8 +25,8 @@ CREATE TABLE `IllustrationArticle` (
 CREATE TABLE `Article` (
   `ArticleID` int(100) NOT NULL,
   `quantite` varchar(30) NOT NULL,
-  ` prix HT` int(100) NOT NULL,
-  `descriptionCourte` varchar(100) NOT NULL  
+  ` prixHT` double,
+  `descriptionCourte` varchar(10000) NOT NULL  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,7 +136,7 @@ insert into IllustrationArticle (ImageID, title, alt, articleID) values
 -- (1,'min-max', 199.99, 'adidas predator', 'Av' à la ligne 1
 
 
-insert into Article (ArticleID, quantite, prix HT, nom, descriptionCourte)
+insert into Article (ArticleID, quantite, prixHT, nom, descriptionCourte)
 values
 (1,'min,max', 199.99, 'adidas predator', 'Avec la nouvelle adidas Predator. La tige en textile tricoté de cette chaussure de foot sans lacets s enroule autour de ton pied pour un vrai ajustement à 360 degrés.'),
 (2, 'min,max', 139.99, 'adidas pure', 'Basket adidas Originals Pure. La basket adidas Originals Pure Boost réactualise le look d un modèle de course emblématique des années 80.'),
