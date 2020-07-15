@@ -12,13 +12,13 @@
           $_SESSION["user"] = $user;
         }
       }else{
-        $error = "This login doesn't exist";
+        $error = "Cette connexion n'existe pas";
       }
     }else{
-      $error = "Password and login can't be empty";
+      $error = "Le mot de passe et la connexion ne peuvent pas être vides";
     }
   }else{
-    $error = "Impossible to log this user, field can't be empty";  
+    $error = "Impossible d'enregistrer cet utilisateur, le champ ne peut pas être vide";  
   }
   
   
