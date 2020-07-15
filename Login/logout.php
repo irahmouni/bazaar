@@ -15,3 +15,4 @@
   
   header("location:index.php");
   die;
+  ?>
