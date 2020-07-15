@@ -26,6 +26,8 @@ try {
     print $row[ 'adresseID' ];
     print $row[ 'numero' ];
     print $row[ 'rue' ];
+    print $row[ 'comp1' ];
+    print $row[ 'ville' ];
     print $row[ 'codePostal' ];
     print $row[ 'pays' ];
     //print $row[ 'url' ];
@@ -45,8 +47,10 @@ try {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC) ){
     print $row[ 'ArticleID' ];
     print $row[ 'nom' ];
-    print $row[ 'descriptionCourte' ];
     print $row[ 'prix HT' ];
+    print $row[ 'qantite' ];
+    print $row[ 'descriptionCourte' ];
+   
     //print $row[ 'url' ];
     }
 }catch (PDOException $e){
@@ -63,7 +67,10 @@ try {
   
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC) ){
     print $row[ 'commandeID' ];
+    print $row[ 'adresseID' ];
     print $row[ 'reglee' ];
+    print $row[ 'date' ];
+    
     //print $row[ 'url' ];
     }
 }catch (PDOException $e){
@@ -82,6 +89,7 @@ try {
     print $row[ 'ImageID' ];
     print $row[ 'articleID' ];
     print $row[ 'title' ];
+    print $row[ 'alt' ];
     //print $row[ 'url' ];
     }
 }catch (PDOException $e){
@@ -98,25 +106,7 @@ try {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC) ){
     print $row[ 'operationID' ];
     print $row[ 'quantite' ];
-    print $row[ 'date' ];
-    //print $row[ 'url' ];
-    }
-}catch (PDOException $e){
-        print $e->getMessage(); 
-}
-   
-/**
- * partie Prix
- */
-$sql = 'SELECT * FROM Prix';
-try {
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-  
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC) ){
-    print $row[ 'articleID' ];
-    print $row[ 'valeur' ];
-    print $row[ 'article' ];
+ 
     //print $row[ 'url' ];
     }
 }catch (PDOException $e){
@@ -132,11 +122,11 @@ try {
     $stmt->execute();
   
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC) ){
-    print $row[ 'id' ];
+    print $row[ 'utilisateurID' ];
     print $row[ 'passwordHash' ];
     print $row[ 'pseudo' ];
     print $row[ 'prenom' ];
-    print $row[ 'nom' ];
+    print $row[ 'administrateur' ];
     //print $row[ 'url' ];
     }
 }catch (PDOException $e){
