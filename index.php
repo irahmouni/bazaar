@@ -1,5 +1,19 @@
 <?php include ( "inc/connect.inc.php" ); ?>
 <?php 
+
+
+try {
+    $dsn= 'mysql:host=localhost;dbname=bazaar';
+    $db = new PDO ($dsn, 'phpuser', 'php54', array( PDO::ATTR_PERSISTENT => true,
+                                                    PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                                                    PDO::ATTR_EMULATE_PREPARES => false,
+                                                    PDO::ATTR_STRINGIFY_FETCHES => false));
+    $db->prepare('SET NAMES \'UTF8\'')->execute();
+} catch ( PDOException $e) {
+    throw new DBException("connection: $dsn " . $e->getMessage() . '<br/>');
+
+}
+
 ob_start();
 session_start();
 if (!isset($_SESSION['user_login'])) {
@@ -63,7 +77,7 @@ else {
 		<div class="home-welcome">
 			<div class="home-welcome-text" style="background-image: url(image/homebackgrndimg.png); height: 380px; ">
 				<h1 style="margin: 0px;">Welcome To eBuyBD</h1>
-				<h2>Largest Online Shopping In Bangladesh</h2>
+				<h2>bazaar</h2>
 			</div>
 		</div>
 		<div class="home-prodlist">
