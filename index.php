@@ -137,7 +137,7 @@ try {
 ?>
 <!DOCTYPE html>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>bazaar</title>
@@ -154,7 +154,7 @@ try {
             <p id="article">panier vide</p>
         </div>
         <div class="col-2">
-            <img  id=panier src="img/panier.jpg">
+            <img  id=panier src="image/panier.jpg">
         </div>
 
     </div>
@@ -169,21 +169,21 @@ try {
         </article>
 
         <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <img id="2" src="image/Baskette/Baskette-adidas_pure.jpg">
+            <img id="2" src="img/Baskette/Baskette-adidas_pure.jpg">
             <h5>Adidas Ace PureControl</h5>
             <button id="1" class="btn btn-success" onclick="achat(this), total()">Ajouter au panier</button>
             <p>175.25€ TTC</p>
         </article>
 
         <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <img id="3" src="image/Baskette/Baskette-adidas_purechaos.jpg">
+            <img id="3" src="img/Baskette/Baskette-adidas_purechaos.jpg">
             <h5>Adidas X16 Purechaos</h5>
             <button id="2" class="btn btn-success" onclick="achat(this), total()">Ajouter au panier</button>
             <p>125.25€ TTC</p>
         </article>
 
         <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <img id="4" src="image/Baskette/Baskette-nike_hyperv.jpg">
+            <img id="4" src="img/Baskette/Baskette-nike_hyperv.jpg">
             <h5>Nike Hypervenom Phantom III</h5>
             <button id="3" class="btn btn-success" onclick="achat(this), total()">Ajouter au panier</button>
             <p>145.25€ TTC</p>
@@ -191,14 +191,14 @@ try {
 
 
         <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <img id="img5" src="image/Baskette/Baskette-nike_mercu.jpg">
+            <img id="5" src="img/Baskette/Baskette-nike_mercu.jpg">
             <h5>Nike Tiempo Ligeria</h5>
             <button id="4" class="btn btn-success" onclick="achat(this), total()">Ajouter au panier</button>
             <p>165.25€ TTC</p>
         </article>
 
         <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <img id="img6" src="image/Baskette/Baskette-Nike.jpg">
+            <img id="6" src="img/Baskette/Baskette-Nike.jpg">
             <h5>Nike Mercurial Superfly</h5>
             <button id="5" class="btn btn-success" onclick="achat(this), total()">Ajouter au panier</button>
             <p>105.25€ TTC</p>
