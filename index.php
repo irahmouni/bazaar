@@ -145,6 +145,12 @@ try {
 
 </head>
 <body>
+
+   
+
+
+    <!-- end navbar -->
+
 <br>
 <div class="container-fluid bandeau">
     <div class="row">

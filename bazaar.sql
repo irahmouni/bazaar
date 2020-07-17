@@ -17,7 +17,23 @@ CREATE TABLE `IllustrationArticle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `admin`
+--
 
+CREATE TABLE IF NOT EXISTS `admin` (
+`id` int(11) NOT NULL,
+  `firstName` varchar(125) NOT NULL,
+  `lastName` varchar(125) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` varchar(25) NOT NULL,
+  `address` text NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `confirmCode` varchar(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 -- Structure de la table `Article`
 
@@ -146,6 +162,11 @@ values
 (6, 'min,max', 129.99, 'Nike JR', 'Offre confort et design légendaire. Détails en cuir de haute qualité.')
 
 
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+ ADD PRIMARY KEY (`id`);
 
 
 
