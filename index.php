@@ -158,10 +158,16 @@ try {
         <div class="col-2">
             <p id="article">panier vide</p>
         </div>
+        
         <div class="col-2">
             <img  id=panier src="img/panier.jpg">
         </div>
 
+    </div>
+    <div> 
+    <button id="login" class="btn btn-success" onclick="login(this), total()">Login</button>
+   
+    
     </div>
 </div>
 <div class="container">
