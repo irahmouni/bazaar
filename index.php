@@ -165,7 +165,35 @@ try {
 
     </div>
     <div> 
-    <button id="login" class="btn btn-success" onclick="login(this), total()">Login</button>
+    <button id="login" class="btn btn-success" onclick="login(this) src=login.php"
+    div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    
+                <?php 
+                    
+                    
+                   
+                    if(!isset($_SESSION['email'])){
+                        echo "<li><a href='login1.php'>Login</a></li>";
+                    }
+                    else 
+                    {
+                        echo "<li><a href='logout.php'>Logout</a></li>";
+                    }
+                     if(isset($_SESSION['email'])){
+                        $sess=$_SESSION['email'];
+                        echo "<li><a>Hi ".$_SESSION['email']." !</a></li>";
+                        
+                    }
+                    
+                    
+                ?>
+
+    
+    
+    
+    
+    </button>
    
     
     </div>
