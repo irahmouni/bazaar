@@ -68,6 +68,14 @@ CREATE TABLE `Utilisateur` (
   `administrateur` boolean DEFAULT false
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE IF NOT EXISTS `Utilisateur` (
+
+
+  `confirmCode` varchar(10) NOT NULL,
+  `activation` varchar(10) NOT NULL DEFAULT 'no'
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 -- Structure de la table `Adresse`
@@ -82,6 +90,14 @@ CREATE TABLE `Adresse` (
   `pays` varchar(50) NOT NULL,
   `adresseID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ---------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+
 
 
 -- Structure de la table `Commande`
