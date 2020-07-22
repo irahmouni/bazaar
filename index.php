@@ -1,4 +1,69 @@
 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bazaar</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+   
+
+
+    <!-- end navbar -->
+
+<br>
+<div class="container-fluid bandeau">
+    <div class="row">
+        <h1 class="col-8">bazaar</h1>
+        <div class="col-2">
+            <p id="article">panier vide</p>
+        </div>
+        
+        <div class="col-2">
+            <img  id=panier src="img/panier.jpg">
+        </div>
+
+    </div>
+    <div> 
+    <button id="login" class="btn btn-success" onclick="login(this) src=login.php"
+    div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    
+                <?php 
+                    
+                    
+                   
+                    if(!isset($_SESSION['email'])){
+                        echo "<li><a href='login1.php'>Login</a></li>";
+                    }
+                    else 
+                    {
+                        echo "<li><a href='logout.php'>Logout</a></li>";
+                    }
+                     if(isset($_SESSION['email'])){
+                        $sess=$_SESSION['email'];
+                        echo "<li><a>Hi ".$_SESSION['email']." !</a></li>";
+                        
+                    }
+                    
+                    
+                ?>
+
+    
+    
+    
+    
+    </button>
+   
+    
+    </div>
+</div>
+
 <?php 
 
 try {
@@ -133,71 +198,7 @@ try {
 }catch (PDOException $e){
         print $e->getMessage(); 
 }
-   
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>bazaar</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body>
-
-   
-
-
-    <!-- end navbar -->
-
-<br>
-<div class="container-fluid bandeau">
-    <div class="row">
-        <h1 class="col-8">bazaar</h1>
-        <div class="col-2">
-            <p id="article">panier vide</p>
-        </div>
-        
-        <div class="col-2">
-            <img  id=panier src="img/panier.jpg">
-        </div>
-
-    </div>
-    <div> 
-    <button id="login" class="btn btn-success" onclick="login(this) src=login.php"
-    div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    
-                <?php 
-                    
-                    
-                   
-                    if(!isset($_SESSION['email'])){
-                        echo "<li><a href='login1.php'>Login</a></li>";
-                    }
-                    else 
-                    {
-                        echo "<li><a href='logout.php'>Logout</a></li>";
-                    }
-                     if(isset($_SESSION['email'])){
-                        $sess=$_SESSION['email'];
-                        echo "<li><a>Hi ".$_SESSION['email']." !</a></li>";
-                        
-                    }
-                    
-                    
-                ?>
-
-    
-    
-    
-    
-    </button>
-   
-    
-    </div>
-</div>
 <div class="container">
     <div class="row">
         <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
